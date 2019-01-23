@@ -9,6 +9,7 @@ https://sourceforge.net/projects/spmtools/
 
 https://sourceforge.net/p/spmtools/diffusion/code/ci/master/tree/
 
+It therefore needs the Diffusion Toolbox to be installed. 
 
 meta_DTI is used to run dti_preprocess, with each stage given by a specific letter:
 
@@ -25,6 +26,11 @@ meta_DTI is used to run dti_preprocess, with each stage given by a specific lett
     s: Smoothing
     x: Extract DW information
     m: Move reset (s) and realign (means) data to new folder
+
+NB: Ghost Masking ('g') looks for the brainmask in spm8, and will need updated: 
+
+    mask_directory='E:\MRI\spm8\apriori';
+    [M]=grabdata(mask_directory,'brainmask.nii');
 
 DTI_second_level_batch runs the second level analyses directly, again by calling a letter:
 
